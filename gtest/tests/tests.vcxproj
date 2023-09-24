@@ -104,12 +104,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\decll\programs\3sem\gtest\gtest;C:\decll\programs\3sem\gtest\STL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\decll\programs\3sem\gtest\gtest;C:\decll\programs\3sem\gtest\STL;D:\DECLL\progs\3sem\gtest\gtest;D:\DECLL\progs\3sem\gtest\STL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\decll\programs\3sem\gtest\gtest;C:\decll\programs\3sem\gtest\STL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\decll\programs\3sem\gtest\gtest;C:\decll\programs\3sem\gtest\STL;D:\DECLL\progs\3sem\gtest\gtest;D:\DECLL\progs\3sem\gtest\STL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
