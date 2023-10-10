@@ -1,6 +1,4 @@
-#ifndef INCLUDE_BITFIELD_H_
-#define INCLUDE_BITFIELD_H_
-
+#pragma once
 #include <iostream>
 
 using elem_type = unsigned int;
@@ -104,7 +102,7 @@ TBitField& TBitField::operator=(const TBitField& bf) {
 	return *this;
 }
 
-bool TBitField::operator==(const TBitField& bf) const {
+bool TBitField::operator==(const TBitField& bf) const noexcept {
 	if (bitLen != bf.size())
 	{
 		return 0;
@@ -120,7 +118,7 @@ bool TBitField::operator==(const TBitField& bf) const {
 	return 1;
 }
 
-bool TBitField::operator!=(const TBitField& bf) const {
+bool TBitField::operator!=(const TBitField& bf) const noexcept {
 	return !(*this == bf);
 }
 
@@ -214,6 +212,3 @@ void TBitField::reset(size_t i) {
 		pMem[GetMemIndex(i)] &= (~(GetMemMask(i)));
 	}
 }
-
-
-#endif  // INCLUDE_BITFIELD_H_

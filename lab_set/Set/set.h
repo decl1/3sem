@@ -1,5 +1,4 @@
-#ifndef INCLUDE_SET_H_
-#define INCLUDE_SET_H_
+#pragma once
 
 #include <iostream>
 #include "bitfield.h"
@@ -35,7 +34,6 @@ public:
   friend std::ostream& operator<<(std::ostream& out, const TSet &bf);
 };
 
-#endif  // INCLUDE_SET_H_
 
 TSet::TSet(int mp) : bitField(mp), maxPower(mp) {}
 
@@ -96,7 +94,8 @@ TSet TSet::operator+(const TSet& s) {
     if (maxPower > s.maxPower) {
         cor_len = maxPower;
     }
-    cor_len = s.maxPower;
+    else
+        cor_len = s.maxPower;
     TSet tmp(cor_len);
     tmp.bitField = bitField | s.bitField;
     return tmp;
@@ -107,7 +106,8 @@ TSet TSet::operator*(const TSet& s) {
     if (maxPower > s.maxPower) {
         cor_len = maxPower;
     }
-    cor_len = s.maxPower;
+    else
+        cor_len = s.maxPower;
     TSet tmp(cor_len);
     tmp.bitField = bitField & s.bitField;
     return tmp;
@@ -119,9 +119,9 @@ TSet TSet::operator~() {
 
 std::istream& operator>>(std::istream& istr, TSet& s) {
     const int mp = s.maxPower;
-    for (int i = 0; i <= mp; ++i)
-    {
-        int val; istr >> val;
+    for (int i = 0; i < mp; ++i) {
+        int val; 
+        istr >> val;
         s.InsElem(val);
     }
     return istr;
@@ -129,8 +129,7 @@ std::istream& operator>>(std::istream& istr, TSet& s) {
 
 std::ostream& operator<<(std::ostream& ostr, const TSet& s) {
     const int mp = s.maxPower;
-    for (int i = 0; i <= mp; ++i)
-    {
+    for (int i = 0; i < mp; ++i) {
         ostr << s.IsMember(i) << " ";
     }
     return ostr;
