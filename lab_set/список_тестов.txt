@@ -1,0 +1,51 @@
+Минимальный список тестов на BitField
+
+1) * can_get_length
+2) * can_create_bitfield_with_positive_length
+3) * can_create_too_large_bitfield
+4) * new_bitfield_is_set_to_zero
+5) throws_when_create_bitfield_with_negative_length
+6) can_set_bit
+7) throws_when_set_bit_with_negative_index
+8) throws_when_set_bit_with_too_large_index
+9) throws_when_get_bit_with_negative_index
+10) throws_when_get_bit_with_too_large_index
+11) can_clear_bit
+12) throws_when_clear_bit_with_negative_index
+13) throws_when_clear_bit_with_too_large_index
+14) can_assign_bitfields_of_equal_size
+15) can_assign_bitfields_of_non_equal_size
+16) assign_operator_changes_bitfield_size
+17) assign_operator_correctly_work
+18) or_operator_applied_to_bitfields_of_equal_size
+19) or_operator_applied_to_bitfields_of_non_equal_size
+20) and_operator_applied_to_bitfields_of_equal_size
+21) and_operator_applied_to_bitfields_of_non_equal_size
+22) can_invert_bitfield
+23) can_invert_large_bitfield
+24) can_invert_many_random_bits_bitfield
+25) bitfields_with_different_bits_are_not_equal
+
+Минимальный список тестов на Set
+
+1) can_get_max_power_set
+2) can_insert_non_existing_element
+3) can_insert_existing_element
+4) can_delete_non_existing_element
+5) can_delete_existing_element
+6) compare_two_sets_of_non_equal_sizes
+7) compare_two_equal_sets
+8) compare_two_non_equal_sets
+9) can_assign_set_of_equal_size
+10) can_assign_set_of_greater_size
+11) can_assign_set_of_less_size
+12) can_insert_non_existing_element_using_plus_operator
+13) throws_when_insert_non_existing_element_out_of_range_using_plus_operator
+14) can_insert_existing_element_using_plus_operator
+15) check_size_of_the_combination_of_two_sets_of_equal_size
+16) * can_combine_two_sets_of_equal_size
+17) check_size_changes_of_the_combination_of_two_sets_of_non_equal_size
+18) can_combine_two_sets_of_non_equal_size
+19) can_intersect_two_sets_of_equal_size
+20) can_intersect_two_sets_of_non_equal_size
+21) * check_negation_operator
