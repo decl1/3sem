@@ -104,12 +104,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\DECLL\progs\3sem\lab_set\BitField;D:\DECLL\progs\3sem\lab_set\Set;D:\DECLL\progs\3sem\lab_set\gtest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\decll\programs\3sem\lab_set\BitField;C:\decll\programs\3sem\lab_set\Set;C:\decll\programs\3sem\lab_set\gtest;D:\DECLL\progs\3sem\lab_set\BitField;D:\DECLL\progs\3sem\lab_set\Set;D:\DECLL\progs\3sem\lab_set\gtest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\DECLL\progs\3sem\lab_set\gtest;D:\DECLL\progs\3sem\lab_set\Set;D:\DECLL\progs\3sem\lab_set\BitField;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\decll\programs\3sem\lab_set\BitField;C:\decll\programs\3sem\lab_set\Set;C:\decll\programs\3sem\lab_set\gtest;D:\DECLL\progs\3sem\lab_set\gtest;D:\DECLL\progs\3sem\lab_set\Set;D:\DECLL\progs\3sem\lab_set\BitField;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
