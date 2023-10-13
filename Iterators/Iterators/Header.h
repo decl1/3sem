@@ -49,7 +49,7 @@ public:
 		++ptr;
 		return *this;
 	}
-	OutIterator operator++(T*) {
+	OutIterator operator++(int) {
 		OutIterator copy{ *this };
 		++ptr;
 		return copy;
@@ -57,10 +57,74 @@ public:
 };
 
 template<class T>
-class ForIterator : public std::iterator<std::forward_iterator_tag, T> { };
+class ForIterator : public std::iterator<std::forward_iterator_tag, T> {
+private:
+	T* ptr;
+	ForIterator(T* p) : ptr(p) { };
+public:
+	ForIterator(const ForIterator& it) : ptr(it.ptr) { };
+	bool operator ==(const ForIterator& it) const {
+		return ptr == it.ptr;
+	}
+	bool operator!=(const ForIterator& it) const {
+		return ptr != it.ptr;
+	}
+	ForIterator& operator ++() const {
+		++ptr;
+		return *this;
+	}
+	ForIterator operator++(int) {
+		ForIterator copy{ *this };
+		++ptr;
+		return copy;
+	}
+	ForIterator& operator+(int a) {
+		ptr += a;
+		return *this;
+	}
+
+};
 
 template<class T>
-class BdIterator : public std::iterator<std::bidirectional_iterator_tag, T> { };
+class BdIterator : public std::iterator<std::bidirectional_iterator_tag, T> { 
+private:
+	T* ptr;
+	BdIterator(T* p) : ptr(p) {  };
+public:
+	BdIterator(const BdIterator& it) : ptr(it.ptr) {  };
+	bool operator ==(const BdIterator& it) const {
+		return ptr == it.ptr;
+	}
+	bool operator!=(const BdIterator& it) const {
+		return ptr != it.ptr;
+	}
+	BdIterator& operator ++() const {
+		++ptr;
+		return *this;
+	}
+	BdIterator operator++(int) {
+		BdIterator copy{ *this };
+		++ptr;
+		return copy;
+	}
+	BdIterator& operator+(int a) {
+		ptr += a;
+		return *this;
+	}
+	BdIterator& operator --() const {
+		--ptr;
+		return *this;
+	}
+	BdIterator operator--(int) {
+		BdIterator copy{ *this };
+		--ptr;
+		return copy;
+	}
+	BdIterator& operator-(int a) {
+		ptr -= a;
+		return *this;
+	}
+};
 
 template<class T>
 class RaIterator : public std::iterator<std::random_access_iterator_tag, T> { };
@@ -96,6 +160,36 @@ public:
 	T* end() {
 		return (&pMem[size - 1]) + 1;
 	}
+
+	void TFill(T fill) {
+		for (auto it = this->begin(); it != this->end(); ++it) {
+			*it = fill;
+		}
+	}
+	void TFill_n(T fill, int n) {
+		if (n > 0 && n <= size) {
+			auto itend = this->begin() + n;
+			for (auto it = this->begin(); it != itend; ++it) {
+				*it = fill;
+			}
+		}
+	}
+	void TReplace(T replaced, T to_replace) {
+		for (auto it = this->begin(); it != this->end(); ++it) {
+			if (*it == replaced)
+				*it = to_replace;
+		}
+	}
+	void TReplace_n(T replaced, T to_replace,int n) {
+		if (n > 0 && n <= size) {
+			auto itend = this->begin() + n;
+			for (auto it = this->begin(); it != itend; ++it) {
+				if (*it == replaced)
+					*it = to_replace;
+			}
+		}
+	}
+
 
 	friend std::ostream& operator<<<T>(std::ostream& ostr, const  TVector<T>& vec);
 };
