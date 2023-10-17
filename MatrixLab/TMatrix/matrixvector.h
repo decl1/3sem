@@ -184,7 +184,7 @@ std::ostream& operator<<(std::ostream& ostr, const TVector<T>& v) {
 template<typename T>
 class TMatrix : private TVector<TVector<T>> {
   using TVector<TVector<T>>::pMem;
-  using TVector<TVector<T>>::sz;
+  using TVector<TVector<T>>::_size;
 public:
   TMatrix(size_t s = 1) : TVector<TVector<T>>(s) {
     for (size_t i = 0; i < sz; i++)

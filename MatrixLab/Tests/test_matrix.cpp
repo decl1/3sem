@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "matrixvector.h"
 #include <gtest.h>
 
 TEST(TMatrix, can_create_matrix_with_positive_length) {
@@ -14,7 +14,7 @@ TEST(TMatrix, throws_when_create_matrix_with_negative_length) {
 }
 
 TEST(TMatrix, can_create_copied_matrix) {
-  TDynamicMatrix<int> m(5);
+  TMatrix<int> m(5);
 
   ASSERT_NO_THROW(TMatrix<int> m1(m));
 }
