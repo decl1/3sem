@@ -5,11 +5,13 @@
 #define USE_SET
 
 #ifdef USE_SET
-void eratosthenes_alghoritm () {
-	// алгоритм решета Ёратосфена с множествами
+void eratosthenes_alghoritm (int n) {
+	std::cout << "---===–ешето Ёратосфена через множества===---" << std::endl;
+	TSet U(n);
+	std::cout << U;
 }
 #else
-void eratosthenes_alghoritm() {
+void eratosthenes_alghoritm(int n) {
 	// алгоритм решета Ёратосфена с битовыми пол€ми
 }
 #endif
@@ -86,6 +88,12 @@ void main() {
 			}
 		case 7:
 			{
+				int n;
+				std::cout << "¬ведите N: ";
+				std::cin >> n;
+				eratosthenes_alghoritm(n);
+				system("pause");
+				system("cls");
 				break;
 			}
 		case 8:
