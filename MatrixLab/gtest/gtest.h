@@ -1,5 +1,4 @@
 #define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING
-
 // Copyright 2005, Google Inc.
 // All rights reserved.
 //

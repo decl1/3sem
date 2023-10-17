@@ -102,12 +102,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\DECLL\progs\3sem\MatrixLab\gtest;D:\DECLL\progs\3sem\MatrixLab\TMatrix;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\DECLL\progs\3sem\MatrixLab\gtest;D:\DECLL\progs\3sem\MatrixLab\TMatrix;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,6 +132,14 @@
     <ClCompile Include="runtests.cpp" />
     <ClCompile Include="test_matrix.cpp" />
     <ClCompile Include="test_vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gtest\gtest.vcxproj">
+      <Project>{9381161a-c9ec-462a-bce8-6f38b6322950}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TMatrix\TMatrix.vcxproj">
+      <Project>{6da12f3e-fc7d-4af1-9f6a-642942dea136}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

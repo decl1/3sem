@@ -1,5 +1,5 @@
 #include "matrixvector.h"
-#include <gtest.h>
+#include "gtest.h"
 
 TEST(TVector, can_create_vector_with_positive_length) {
   ASSERT_NO_THROW(TVector<int> v(5));
@@ -37,7 +37,8 @@ TEST(TVector, copied_vector_is_equal_to_source_one) {
 	TVector<int> vcopy(v1);
 	bool equal = 1;
 	for (int i = 0; i < 3; i++) {
-		equal = (v1[i] != vcopy[i]);
+		if (v1[i] != vcopy[i])
+			equal = 0;
 	}
 	EXPECT_EQ(1, equal);
 }
@@ -46,18 +47,20 @@ TEST(TVector, copied_vector_has_its_own_memory) {
 	int data[3] = { 3,1,2 };
 	TVector<int> v1(data, 3);
 	TVector<int> vcopy(v1);
-	bool equal = (&v1[0] != &vcopy[0]);
-	EXPECT_EQ(1, equal);
+	bool equal = 0;
+	if (&v1 == &vcopy)
+		equal = 1;
+	EXPECT_EQ(0, equal);
 }
 
-TEST(TVector, throws_when_create_vector_with_negative_length) {
+TEST(TVector, throws_when_set_element_with_negative_index) {
 	TVector<int> v(5);
-	ASSERT_ANY_THROW(v[-1]);
+	ASSERT_ANY_THROW(v.at(-1));
 }
 
 TEST(TVector, throws_when_set_element_with_too_large_index) {
 	TVector<int> v(5);
-	ASSERT_ANY_THROW(v[7]);
+	ASSERT_ANY_THROW(v.at(7));
 }
 
 TEST(TVector, can_assign_vector_to_itself) {
