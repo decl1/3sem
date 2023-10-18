@@ -163,7 +163,7 @@ void swap(TBitField& lhs, TBitField& rhs) noexcept
 std::ostream& operator<<(std::ostream& ostr, const TBitField& bf)
 {
 	for (int i = 0; i < bf.bitLen; i++) {
-		ostr << "[" << i << "] = " << bf.test(i)<<" ";
+		ostr << "[" << i << "] = " << bf.test(i) << " " << std::endl;
 	}
 	ostr << std::endl;
 	return ostr;

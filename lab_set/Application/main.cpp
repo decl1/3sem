@@ -9,11 +9,24 @@ void eratosthenes_alghoritm(int n) {
 	std::cout << "---===–ешето Ёратосфена через множества===---" << std::endl;
 	TSet U(n);
 	U = ~U;
+	for (int i = 2; i < n; i++) {
+		for (int j = i * i; j < n; j += i) {
+			U.DelElem(j);
+		}
+	}
 	std::cout << U;
 }
 #else
 void eratosthenes_alghoritm(int n) {
-	// алгоритм решета Ёратосфена с битовыми пол€ми
+	std::cout << "---===–ешето Ёратосфена через множества===---" << std::endl;
+	TBitField U(n);
+	U = ~U;
+	for (int i = 2; i < n; i++) {
+		for (int j = i * i; j < n; j += i) {
+			U.reset(j);
+		}
+	}
+	std::cout << U;
 }
 #endif
 
